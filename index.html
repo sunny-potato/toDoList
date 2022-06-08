@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do list</title>
+  </head>
+  <body>
+    <h1>Today's plan</h1>
+    <div id="addToList">
+      <input id="createNewItem" type="text" placeholder="Write new item" />
+      <button id="addItemButton" onClick="addItem()">+ Add item</button>
+    </div>
+    <div id="theWholeList">
+      <h3>To do list</h3>
+      <ul id="todoList"></ul>
+      <h3>Done list</h3>
+      <ul id="doneList"></ul>
+    </div>
+
+    <!-- <div>
+      <button onClick="saveList()">Save</button>
+    </div>
+
+    <div id="displaySavedList"><h3>Saved lists</h3></div> -->
+
+    <script src="./index.js"></script>
+  </body>
+</html>
