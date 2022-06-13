@@ -3,7 +3,7 @@ const createNewItem = document.getElementById("createNewItem");
 createNewItem.addEventListener("keyup", (event) => {
   if (event.code === "Enter") {
     addItem();
-    console.log(createNewItem);
+    createNewItem.value = "";
   }
 });
 
@@ -47,7 +47,6 @@ function changeItem(checkBox, newItem, deleteButton) {
       boxLine.style.display = "block";
       doneListBox.style.display = "block";
       doneList.appendChild(newItem);
-      console.log(doneList);
     } else {
       toDoList.appendChild(newItem);
       if (doneList.getElementsByTagName("li").length === 0) {
@@ -67,19 +66,35 @@ function changeItem(checkBox, newItem, deleteButton) {
 }
 
 function dragItem(newItem) {
-  newItem.addEventListener("dragstart", (event) => {
-    // event.dataTransfer.setData("text/plain", newItem);
-  });
-  newItem.addEventListener("dragover", (event) => {
-    event.preventDefault();
-  });
-  newItem.addEventListener("drag", (event) => {
-    event.preventDefault();
-    // const draggedData = event.dataTransfer.getData("text");
-    toDoList.appendChild(newItem);
+  newItem.addEventListener("dragstart", () => {});
+  newItem.addEventListener("dragover", () => {});
+  newItem.addEventListener("dragend", (event) => {
+    const position = findPosition(toDoList, event);
+    toDoList.insertBefore(
+      newItem,
+      toDoList.getElementsByTagName("li")[position]
+    );
   });
 }
 
-// change list in order
-// add sublist
-// list style image
+function findPosition(containerElement, event) {
+  const containerRect = containerElement.getBoundingClientRect();
+  const positionInContainer = event.pageY - containerRect.top;
+
+  let childHeightSum = 0;
+  for (let index = 0; index < containerElement.children.length; index++) {
+    const child = containerElement.children[index];
+    const childRect = child.getBoundingClientRect();
+    const nextSum = childHeightSum + childRect.height;
+    if (nextSum >= positionInContainer) {
+      // console.log({ nextSum, positionInContainer, index });
+      return index;
+    } else {
+      childHeightSum = nextSum;
+    }
+  }
+
+  // console.log({ containerRect, positionInContainer, childHeightSum });
+}
+
+// Q - add to "list style image"!!!!!!!!!
