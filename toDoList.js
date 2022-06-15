@@ -10,10 +10,14 @@ createNewItem.addEventListener("keyup", (event) => {
 const addToList = document.getElementById("addToList");
 
 function createItem() {
+  const iconSpan = document.createElement("span");
+  iconSpan.className = "material-symbols-outlined";
+  iconSpan.textContent = "drag_indicator";
   const newItem = document.createElement("li");
   newItem.textContent = createNewItem.value;
-
+  newItem.insertBefore(iconSpan, newItem.firstChild);
   newItem.draggable = true;
+  console.log(newItem.firstChild);
 
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
