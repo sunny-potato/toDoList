@@ -51,12 +51,8 @@ h1 input {
   padding: 20px;
   margin: 10px;
 }
-/* ul {
-  list-style-image: url("./images/dots.png");
-} */
 
 li {
-  /* list-style-image: url("./images/dots.png"); */
   position: relative;
   list-style: none;
   text-align: left;

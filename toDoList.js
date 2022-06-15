@@ -91,14 +91,9 @@ function findPosition(containerElement, event) {
     const childRect = child.getBoundingClientRect();
     const nextSum = childHeightSum + childRect.height;
     if (nextSum >= positionInContainer) {
-      // console.log({ nextSum, positionInContainer, index });
       return index;
     } else {
       childHeightSum = nextSum;
     }
   }
-
-  // console.log({ containerRect, positionInContainer, childHeightSum });
 }
-
-// Q - add to "list style image"!!!!!!!!!
