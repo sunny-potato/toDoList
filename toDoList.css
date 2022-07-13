@@ -1,81 +1,134 @@
-h1 input {
-  margin: 0 10px;
-  border: none;
-  font-size: 28px;
+* {
+  margin: 0;
+  font-family: "Edu TAS Beginner", sans-serif;
+  font-size: 1.25rem;
+  color: rgba(51, 81, 47, 1);
   font-weight: bold;
-  outline: none;
 }
-#addToList {
-  margin: 10px;
+body {
+  background: rgba(161, 138, 107, 0.6);
 }
-#addToList > button {
-  background-color: white;
-  border: 2px solid grey;
-  border-radius: 8px;
-  font-size: 20px;
-  color: grey;
+
+.toDolistContianer {
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
 }
-#addToList > button:hover {
-  background-color: lightgrey;
-  transform: scale(1.2);
-  translate: 0.2;
+.innerContainer {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  background-color: rgba(210, 252, 0, 1);
+}
+.headerTitle {
+  margin: 1rem;
+  color: rgba(210, 252, 0, 1);
+}
+input,
+input::placeholder,
+button {
+  background-color: rgba(2, 12, 145, 0.9);
+  color: rgba(210, 252, 0, 0.8);
+}
+.headerTitle input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  font-size: 1.85rem;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+.addToList {
+  margin: 0 1rem;
+}
+.addToList div {
+  width: 100%;
+  display: flex;
+}
+.addToList div button {
+  height: 100%;
+  border-radius: 0.2rem;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.addToList div button:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }
 
-#addToList > input {
-  margin: 0 10px;
-  font-size: 20px;
+.addToList div input {
+  width: 100%;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
   border: none;
-  outline: none;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 #listBox {
-  display: inline-block;
+  flex-direction: column;
   text-align: center;
-  font-size: 20px;
+  align-items: center;
+  flex-grow: 1;
+  box-sizing: border-box;
 }
 
 #toDoListBox {
-  width: 500px;
-  padding: 20px;
-  margin: 10px;
+  margin: 1rem;
 }
-#boxLine {
+
+#toDoListBox h3 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+#toDoListBox #boxLine {
   display: none;
-  margin: 10px;
-  border-bottom: 1px solid;
+  margin: 1rem;
+  border-bottom: 10px;
 }
 #doneListBox {
   display: none;
-  width: 500px;
-  padding: 20px;
-  margin: 10px;
+  margin: 1rem;
 }
 
 li {
-  position: relative;
   list-style: none;
   text-align: left;
   line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+li .newItemContent {
+  display: inline-flex;
+  word-break: break-all;
+  justify-content: start;
 }
 
 li button {
-  position: absolute;
-  background-color: white;
+  height: 1.5em;
   border: none;
-  right: 0px;
+  border-radius: 0.2rem;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  margin-left: 0.4rem;
 }
 li button:hover {
-  background-color: lightgrey;
-  transform: scale(1.2);
-  translate: 0.2;
+  transform: scale(1.1);
   cursor: pointer;
 }
 li input {
-  margin-left: 10px;
+  margin-left: 1rem;
 }
-input:checked,
-#doneList {
+
+#doneListBox h3 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+#doneList li .newItemContent {
   text-decoration: line-through;
 }
 

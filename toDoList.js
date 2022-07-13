@@ -7,25 +7,30 @@ createNewItem.addEventListener("keyup", (event) => {
   }
 });
 
-const addToList = document.getElementById("addToList");
+const addToList = document.querySelector(".addToList");
 
 function createItem() {
   const iconSpan = document.createElement("span");
   iconSpan.className = "material-symbols-outlined";
   iconSpan.textContent = "drag_indicator";
-  const newItem = document.createElement("li");
-  newItem.textContent = createNewItem.value;
-  newItem.insertBefore(iconSpan, newItem.firstChild);
-  newItem.draggable = true;
-  console.log(newItem.firstChild);
+
+  const itemContent = document.createElement("div");
+  itemContent.textContent = createNewItem.value;
 
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
-  newItem.appendChild(checkBox);
+
+  const itemDiv = document.createElement("div");
+  itemDiv.className = "newItemContent";
+  itemDiv.append(iconSpan, itemContent, checkBox);
 
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "x";
   deleteButton.style.position = "right";
+
+  const newItem = document.createElement("li");
+  newItem.draggable = true;
+  newItem.appendChild(itemDiv);
   newItem.appendChild(deleteButton);
 
   changeItem(checkBox, newItem, deleteButton);
@@ -40,13 +45,13 @@ function addItem() {
   toDoList.appendChild(newItem);
 }
 
+const boxLine = document.getElementById("boxLine");
+const doneListBox = document.getElementById("doneListBox");
 function changeItem(checkBox, newItem, deleteButton) {
   const doneList = document.getElementById("doneList");
   const toDoList = document.getElementById("toDoList");
 
   checkBox.addEventListener("change", () => {
-    const boxLine = document.getElementById("boxLine");
-    const doneListBox = document.getElementById("doneListBox");
     if (checkBox.checked) {
       boxLine.style.display = "block";
       doneListBox.style.display = "block";
@@ -65,6 +70,10 @@ function changeItem(checkBox, newItem, deleteButton) {
       doneList.removeChild(newItem);
     } else {
       toDoList.removeChild(newItem);
+    }
+
+    if (doneList.getElementsByTagName("li").length === 0) {
+      doneListBox.style.display = "none";
     }
   });
 }
