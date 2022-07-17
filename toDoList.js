@@ -1,4 +1,3 @@
-// @ts-ignore
 const createNewItem = document.getElementById("createNewItem");
 createNewItem.addEventListener("keyup", (event) => {
   if (event.code === "Enter") {
