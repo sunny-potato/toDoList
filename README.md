@@ -16,7 +16,7 @@ Simple to-do list
 ## Link
 
 - Link to deployed to-do list
-[to-do list](https://todolist-sunhee.netlify.app/)
+-> [to-do list](https://todolist-sunhee.netlify.app/)
 
 ## Screenshot
 
