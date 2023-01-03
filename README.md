@@ -15,7 +15,7 @@ Simple to-do list
 
 ## Link
 
-Here is the link to "to-do list"
+- Link to "to-do list"
 (link)
 
 ## Screenshot
