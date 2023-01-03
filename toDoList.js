@@ -1,3 +1,11 @@
+const listTitle = document.getElementsByClassName("headerTitle")[0];
+listTitle.addEventListener("focusin", (event) => {
+  event.target.style.background = "rgba(2, 12, 145, 0.7)";
+});
+listTitle.addEventListener("focusout", (event) => {
+  event.target.style.background = "rgba(2, 12, 145, 0.9)";
+});
+
 const createNewItem = document.getElementById("createNewItem");
 createNewItem.addEventListener("keyup", (event) => {
   if (event.code === "Enter") {
@@ -39,17 +47,21 @@ function createItem() {
 }
 
 function addItem() {
-  const newItem = createItem();
-  const toDoList = document.getElementById("toDoList");
-  toDoList.appendChild(newItem);
+  if (createNewItem.value === "") {
+    alert("Fill in the list item");
+  } else {
+    const newItem = createItem();
+    const toDoList = document.getElementById("toDoList");
+    toDoList.appendChild(newItem);
+  }
 }
 
 const boxLine = document.getElementById("boxLine");
 const doneListBox = document.getElementById("doneListBox");
-function changeItem(checkBox, newItem, deleteButton) {
-  const doneList = document.getElementById("doneList");
-  const toDoList = document.getElementById("toDoList");
+const doneList = document.getElementById("doneList");
+const toDoList = document.getElementById("toDoList");
 
+function changeItem(checkBox, newItem, deleteButton) {
   checkBox.addEventListener("change", () => {
     if (checkBox.checked) {
       boxLine.style.display = "block";
