@@ -4,10 +4,10 @@ Simple to-do list
 
 ## Table of Contents
 
-[Technologies](#Technologies)
-[Link](#Link)
-[Screenshot](#screenshot)
-[Features](#Features)
+- [Technologies](#Technologies)
+- [Link](#Link)
+- [Screenshot](#screenshot)
+- [Features](#Features)
 
 ## Technologies
 
