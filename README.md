@@ -5,24 +5,24 @@ Simple to-do list
 ## Table of Contents
 
 [Technologies](#Technologies)
-[Link](#List)
+[Link](#Link)
 [Screenshot](#screenshot)
 [Features](#Features)
 
-# Technologies
+## Technologies
 
 - HTML, CSS, Javascript
 
-# Link
+## Link
 
 Here is the link to "to-do list"
 (link)
 
-# Screenshot
+## Screenshot
 
 ![](to-do-list.gif)
 
-# Features
+## Features
 
 - Name to-do list
 - Add/delete/modify items in the list
